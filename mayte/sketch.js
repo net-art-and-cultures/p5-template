@@ -2,15 +2,14 @@
 
 function setup () {
   // put setup code here
-  createCanvas(window.innerWidth, window.innerHeight)
+  createCanvas(window.innerWidth, window.innerHeight, WEBGL)
 }
 
 function draw () {
-  // put drawing code here
-  if (mouseIsPressed) {
-    fill(0)
-  } else {
-    fill(255)
-  }
-  ellipse(mouseX, mouseY, 80, 80)
+  fill(100,400,255)
+  rect(100,100,100,100)
+
+  noStroke()
+  fill(200, 400, 900)
+  ellipse(mouseX,mouseY,20,20)
 }
