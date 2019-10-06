@@ -5,10 +5,6 @@ var speed = 100;
 var strk = false;
 var fill = true;
 var playing = true;
-//color cyan = color(255,0,0, 14);
-//color blue = color(255,125,25,15);
-//color vSColor;
-//color sSColor;
 var colorSwitcherX;
 var colorSwitcherY;
 
@@ -17,7 +13,7 @@ function setup()
   createCanvas(400,400);
   background(0,0,0);
   blendMode(SUBTRACT);
-  textSize(14);
+  textSize(12);
 }
 
 function draw()
@@ -29,10 +25,11 @@ function draw()
   //recreate window repetition thing
 
     push();
-    fill(255);
+    fill(0);
     text("vertices: " + verts,20,20);
-    text("speed: " + (200-speed),20,40);
-    text("line: " + strk,20,60);
+    text("line: " + (200-speed),20,30);
+    fill(255,0,0);
+    text("PRESS SPACE TO INCREMENT VERTICES", 20,40);
     pop();
 
     push();
@@ -94,22 +91,5 @@ function keyPressed()
     else
       stroke(255,255,255,225);
     strk = !strk;
-  }
-  if(key == 'f')
-  {
-    fill = !fill;
-  }
-  if(key == '-')
-  {
-    speed++;
-  }
-  if(key == '=')
-  {
-    speed--;
-  }
-  if(key == 'c')
-  {
-    colorSwitcherX = mouseX;
-    colorSwitcherY = mouseY;
   }
 }
