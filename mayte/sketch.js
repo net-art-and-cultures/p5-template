@@ -7,11 +7,13 @@ function setup () {
 
 function draw () {
   background (0)
+  ellipse(50,100,100)
+  text("why am i here", 200, 100)
 
-for (var y=50; y=mouseY; y=y+50) {
-  for (var x=100; x=mouseX; x=x+100){
-    fill(255,255,255)
-    rect (x,y, 400, 500)
-    }
-  }
+  ellipse(850,500,100)
+  text("you are not alone", 850, 500)
 }
+
+if (mouseX=650) {
+  text("don't give up", 650, 300)
+} else if {rect(650,300,100)}
