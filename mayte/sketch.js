@@ -3,18 +3,15 @@
 function setup () {
   // put setup code here
   createCanvas(window.innerWidth, window.innerHeight)
-
 }
 
 function draw () {
   background (0)
-  stroke(255)
-  strokeWeight(4)
 
-for (var y=100; y<=mouseY; y=y+150) {
-  for (var x=150; x<=mouseX; x=x+300){
-    fill(random(255), 0, random(255))
-    ellipse (x, y, 100,100)
+for (var y=400; y=mouseY; y=y+50) {
+  for (var x=600; x=mouseX; x=x+100){
+    fill(255,255,255)
+    triangle(x, y, x, y, x, y)
     }
   }
 }
