@@ -8,10 +8,10 @@ function setup () {
 function draw () {
   background (0)
 
-for (var y=400; y=mouseY; y=y+50) {
-  for (var x=600; x=mouseX; x=x+100){
+for (var y=50; y=mouseY; y=y+50) {
+  for (var x=100; x=mouseX; x=x+100){
     fill(255,255,255)
-    triangle(x, y, x, y, x, y)
+    rect (x,y, 400, 500)
     }
   }
 }
