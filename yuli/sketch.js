@@ -3,14 +3,39 @@
 function setup () {
   // put setup code here
   createCanvas(window.innerWidth, window.innerHeight)
+
 }
 
 function draw () {
-  // put drawing code here
-  if (mouseIsPressed) {
-    fill(0)
-  } else {
-    fill(255)
+  background(0)
+  const hue = map(mouseY, 0, windowWidth, 0, 255)
+  const greyscale = map(mouseX, 0, windowWidth, 255, 50)
+  colorMode(HSB, 255)
+  const c = color(hue, greyscale, 255)
+  colorMode(RGB, 255)
+  const g = color(greyscale)
+  const noiseY = map(mouseY, 0, windowHeight, 50, 200)
+  const noiseX = map(mouseX, 0, windowWidth, 100, 400)
+  const noiseY2 = map(mouseY, 0, windowHeight, -100, windowHeight / 2)
+  for (let i = 0; i < 6; i++) {
+    stroke(g)
+    line(0, 0, windowWidth / 2 + noiseX, noiseY + i * windowHeight / 6 )
+    line(0, 0, noiseX + i * windowWidth / 6, windowHeight / 2 + noiseY)
+    line(0, windowHeight, windowWidth / 2 - noiseX, i * windowHeight / 6 - noiseY)
+    line(0, windowHeight, i * windowWidth / 6 - noiseX, 0)
+    line(windowWidth, 0, windowWidth / 2 + noiseY, i * windowHeight / 6 + noiseX)
+    line(windowWidth, 0, i * windowWidth / 6 + noiseY, windowHeight / 2 + noiseX)
+    line(windowWidth, windowHeight, windowWidth / 2 - noiseY, i * windowHeight / 6 - noiseX)
+    line(windowWidth, windowHeight, i * windowWidth / 6 - noiseY, 0)
   }
-  ellipse(mouseX, mouseY, 80, 80)
+  for (let j = 0; j < 12; j++) {
+    stroke(g)
+    line(windowWidth / 2, 0, j * windowWidth / 12 + noiseX, noiseY2)
+    line(windowWidth / 2, windowHeight, j * windowWidth / 12 - noiseX, windowHeight / 2 + noiseY2)
+    line(0, windowHeight / 2, noiseX, j * windowHeight / 12 + noiseY)
+    line(windowWidth, windowHeight / 2, windowWidth / 2 - noiseX, j * windowHeight / 12 - noiseY)
+    stroke(c)
+    line(windowWidth / 2, windowHeight / 2, j * windowWidth / 12 + noiseX, windowHeight + noiseY2)
+    line(windowWidth / 2, windowHeight / 2, j * windowWidth / 12 - noiseX, noiseY2)
+  }
 }
