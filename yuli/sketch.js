@@ -9,7 +9,7 @@ function setup () {
 function draw () {
   background(0)
   const hue = map(mouseY, 0, windowWidth, 0, 255)
-  const greyscale = map(mouseX, 0, windowWidth, 255, 50)
+  const greyscale = map(mouseX, 0, windowWidth, 200, 50)
   colorMode(HSB, 255)
   const c = color(hue, greyscale, 255)
   colorMode(RGB, 255)
