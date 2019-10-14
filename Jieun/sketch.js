@@ -31,6 +31,6 @@ function draw () {
   z += 0.1
   x = sin(z) * 100 + 500
   y = cos(z) * 100 + 200
-  fill(255, 255, 255)
+  fill(100, 100, 100)
   circle(x, y, 100)
 }
