@@ -7,6 +7,8 @@ function setup () {
   textSize(100)
   fill(174, 41, 227)
   text('HAPPY HALLOWEEN!', 200, 200)
+  textSize(20)
+  text('c to clear screen', width - 300, height - 100)
 }
 
 function draw () {
@@ -19,4 +21,17 @@ function draw () {
     ellipse(mouseX + 15, mouseY, 40, 80)
     ellipse(mouseX, mouseY, 40, 80)
   }
+}
+
+function keyTyped () {
+  if (key === 'c') {
+    createCanvas(window.innerWidth, window.innerHeight)
+    background(0)
+    textSize(100)
+    fill(174, 41, 227)
+    text('HAPPY HALLOWEEN!', 200, 200)
+    textSize(20)
+    text('c to clear screen', width - 300, height - 100)
+  }
+  // return false
 }
